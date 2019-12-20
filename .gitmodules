@@ -1,3 +1,6 @@
 [submodule "Code/Submodule/Engine"]
 	path = Code/Submodule/Engine
 	url = https://github.com/bacahillsmu/Engine.git
+[submodule "Engine"]
+	path = Engine
+	url = https://github.com/bacahillsmu/Engine.git
