@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{3CD6D0FF-905F-4B20-AB46-A2E3AAC7F190}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Starship</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <ProjectName>RTS</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Temporary\$(ProjectName)_$(PlatformShortName)_$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temporary\$(ProjectName)_$(PlatformShortName)_$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_$(PlatformShortName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Temporary\$(ProjectName)_$(PlatformShortName)_$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temporary\$(ProjectName)_$(PlatformShortName)_$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_$(PlatformShortName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Temporary\$(ProjectName)_$(PlatformShortName)_$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temporary\$(ProjectName)_$(PlatformShortName)_$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_$(PlatformShortName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Temporary\$(ProjectName)_$(PlatformShortName)_$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temporary\$(ProjectName)_$(PlatformShortName)_$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_$(PlatformShortName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Code/;$(SolutionDir)Code/Submodule/Engine/Code/</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)Code/;$(SolutionDir)Code/Submodule/Engine/Code/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /F /I "$(TargetPath)" "$(SolutionDir)Run"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying $(TargetFileName) to $(SolutionDir)Run...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Code/;$(SolutionDir)Code/Submodule/Engine/Code/</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)Code/;$(SolutionDir)Code/Submodule/Engine/Code/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /F /I "$(TargetPath)" "$(SolutionDir)Run"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying $(TargetFileName) to $(SolutionDir)Run...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Code/;$(SolutionDir)Code/Submodule/Engine/Code/</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)Code/;$(SolutionDir)Code/Submodule/Engine/Code/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /F /I "$(TargetPath)" "$(SolutionDir)Run"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying $(TargetFileName) to $(SolutionDir)Run...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Code/;$(SolutionDir)Code/Submodule/Engine/Code/</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)Code/;$(SolutionDir)Code/Submodule/Engine/Code/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /F /I "$(TargetPath)" "$(SolutionDir)Run"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying $(TargetFileName) to $(SolutionDir)Run...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework\App.hpp" />
+    <ClInclude Include="Framework\CommandFrame.hpp" />
+    <ClInclude Include="Framework\GameCommon.hpp" />
+    <ClInclude Include="Framework\Jobs\PathJob.hpp" />
+    <ClInclude Include="Gameplay\Camera\OrbitCamera.hpp" />
+    <ClInclude Include="Gameplay\Collider2D.hpp" />
+    <ClInclude Include="Gameplay\Entity.hpp" />
+    <ClInclude Include="Gameplay\EntityDefinition.hpp" />
+    <ClInclude Include="Gameplay\EntityUnits\Peon.hpp" />
+    <ClInclude Include="Gameplay\EntityUnits\Warrior.hpp" />
+    <ClInclude Include="Gameplay\Game.hpp" />
+    <ClInclude Include="Gameplay\GameHandle.hpp" />
+    <ClInclude Include="Gameplay\Input\AIController.hpp" />
+    <ClInclude Include="Gameplay\Input\PlayerController.hpp" />
+    <ClInclude Include="Gameplay\Input\ReplayController.hpp" />
+    <ClInclude Include="Gameplay\Lobby\LobbyConsole.hpp" />
+    <ClInclude Include="Gameplay\Map\Map.hpp" />
+    <ClInclude Include="Gameplay\Pathing\Pathing.hpp" />
+    <ClInclude Include="Gameplay\PhysicsObject.hpp" />
+    <ClInclude Include="Gameplay\PhysicsSystem.hpp" />
+    <ClInclude Include="Gameplay\RigidBody2D.hpp" />
+    <ClInclude Include="Gameplay\RTSCommand.hpp" />
+    <ClInclude Include="Gameplay\RTSTask.hpp" />
+    <ClInclude Include="Gameplay\UI\UIWidget.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Framework\App.cpp" />
+    <ClCompile Include="Framework\CommandFrame.cpp" />
+    <ClCompile Include="Framework\Jobs\PathJob.cpp" />
+    <ClCompile Include="Framework\Main_Windows.cpp" />
+    <ClCompile Include="Gameplay\Camera\OrbitCamera.cpp" />
+    <ClCompile Include="Gameplay\Collider2D.cpp" />
+    <ClCompile Include="Gameplay\Entity.cpp" />
+    <ClCompile Include="Gameplay\EntityDefinition.cpp" />
+    <ClCompile Include="Gameplay\EntityUnits\Peon.cpp" />
+    <ClCompile Include="Gameplay\EntityUnits\Warrior.cpp" />
+    <ClCompile Include="Gameplay\Game.cpp" />
+    <ClCompile Include="Gameplay\GameHandle.cpp" />
+    <ClCompile Include="Gameplay\Input\AIController.cpp" />
+    <ClCompile Include="Gameplay\Input\PlayerController.cpp" />
+    <ClCompile Include="Gameplay\Input\ReplayController.cpp" />
+    <ClCompile Include="Gameplay\Lobby\LobbyConsole.cpp" />
+    <ClCompile Include="Gameplay\Map\Map.cpp" />
+    <ClCompile Include="Gameplay\Pathing\Pathing.cpp" />
+    <ClCompile Include="Gameplay\PhysicsObject.cpp" />
+    <ClCompile Include="Gameplay\PhysicsSystem.cpp" />
+    <ClCompile Include="Gameplay\RigidBody2D.cpp" />
+    <ClCompile Include="Gameplay\RTSCommand.cpp" />
+    <ClCompile Include="Gameplay\RTSTask.cpp" />
+    <ClCompile Include="Gameplay\UI\UIWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Submodule\Engine\Code\Engine\Engine.vcxproj">
+      <Project>{5a13416e-df72-4f60-bc23-18558aca0e97}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\Run\Data\Shaders\normal_shader.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

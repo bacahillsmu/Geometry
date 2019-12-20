@@ -1,0 +1,8 @@
+<Root>
+    <Command CommandFrame="1704" GameHandle="131073" CommandType="4" InstantDeath="false"/>
+    <Command CommandFrame="1554" GameHandle="131073" CommandType="6" RightClickPosition="3.076812, 3.492285, 0.000000" RighClickedEntity="0"/>
+    <Command CommandFrame="1444" GameHandle="65536" CommandType="4" InstantDeath="false"/>
+    <Command CommandFrame="970" GameHandle="131073" CommandType="3" EntityToAttack="65536"/>
+    <Command CommandFrame="832" GameHandle="0" CommandType="1" JustConstructed="false" PercentHealth="1" Team="0" CreatePosition="2.902947, 3.772418, 0.000000"/>
+    <Command CommandFrame="744" GameHandle="0" CommandType="0" JustConstructed="false" PercentHealth="1" Team="0" CreatePosition="2.172364, 5.217816, 0.000000"/>
+</Root>

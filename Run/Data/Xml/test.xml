@@ -1,0 +1,33 @@
+<!-- <ImARoot name = "Im A Root Bro!">
+	<Element1 attr1 = "XML Element for Vec2" attr2 = "3.0f, 2.0f"></Element1>
+	<Element2 attr1 = "XML Element for IntVec2" attr2 = "6, 8"></Element2>
+	<Element3 attr1 = "XML Element for IntRange" attr2 = "4~8"></Element3>
+	<Element4 attr1 = "XML Element for IntRange" attr2 = "6"></Element4>
+	<Element5 attr1 = "XML Element for FloatRange" attr2 = "3.f~7.f"></Element5>
+	<Element5 attr1 = "XML Element for FloatRange" attr2 = "5.67f"></Element5>
+	<Element6 attr1 = "XML Element for Vec3" attr2 = "1.0f, 2.0f, 3.0f"></Element6>
+	<Element7 attr1 = "XML Element for AABB2" attr2 = "10.f, 15.f, 30.f, 50.f"></Element7>
+	<Element8 attr1 = "XML Element for Rgba" attr2 = "151.f, 150.f, 130.f, 150.f"></Element8>
+	<Element9 attr1 = "XML Element for Rgba" attr2 = "141.f, 15.f, 162.f"></Element9>
+	<AnotherElement attr1 = "This is another element"></AnotherElement>
+	<ThisAFloat attr1 = "This a float" attr2 = "2.0f"></ThisAFloat>
+</ImARoot> -->
+
+<!-- <GameConfig
+	attr1="WizardTower3"
+	attr1=""
+	attr1=""
+	attr1=""
+	attr1=""
+	attr1=""
+	attr1=""
+	attr1=""
+	attr1=""
+	attr1=""
+/> -->
+
+<GameConfig
+	levelStart="WizardTower3"
+	aspectRatio="1.777"
+	cameraHeight="30.0"
+	/>

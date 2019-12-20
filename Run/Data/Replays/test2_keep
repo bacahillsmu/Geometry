@@ -1,0 +1,28 @@
+<Root>
+    <Command CommandFrame="4380" GameHandle="851980" CommandType="2" TargetPosition="1.267489, 6.980121, 0.000000"/>
+    <Command CommandFrame="4380" GameHandle="786443" CommandType="2" TargetPosition="1.267489, 6.980121, 0.000000"/>
+    <Command CommandFrame="4380" GameHandle="524295" CommandType="2" TargetPosition="1.267489, 6.980121, 0.000000"/>
+    <Command CommandFrame="4248" GameHandle="720906" CommandType="2" TargetPosition="6.707669, 1.504560, 0.000000"/>
+    <Command CommandFrame="4248" GameHandle="655369" CommandType="2" TargetPosition="6.707669, 1.504560, 0.000000"/>
+    <Command CommandFrame="4248" GameHandle="589832" CommandType="2" TargetPosition="6.707669, 1.504560, 0.000000"/>
+    <Command CommandFrame="3915" GameHandle="458758" CommandType="2" TargetPosition="5.266981, -0.124227, 0.000000"/>
+    <Command CommandFrame="3915" GameHandle="393221" CommandType="2" TargetPosition="5.266981, -0.124227, 0.000000"/>
+    <Command CommandFrame="3657" GameHandle="327684" CommandType="2" TargetPosition="3.074272, 0.069428, 0.000000"/>
+    <Command CommandFrame="3527" GameHandle="262147" CommandType="2" TargetPosition="2.433800, 0.769622, 0.000000"/>
+    <Command CommandFrame="3411" GameHandle="196610" CommandType="2" TargetPosition="1.274321, 1.981988, 0.000000"/>
+    <Command CommandFrame="3300" GameHandle="131073" CommandType="2" TargetPosition="0.579914, 3.096982, 0.000000"/>
+    <Command CommandFrame="3191" GameHandle="65536" CommandType="2" TargetPosition="0.592481, 4.638402, 0.000000"/>
+    <Command CommandFrame="2767" GameHandle="0" CommandType="0" CreatePosition="3.344262, 6.652919, 0.000000"/>
+    <Command CommandFrame="2712" GameHandle="0" CommandType="0" CreatePosition="3.675378, 7.067901, 0.000000"/>
+    <Command CommandFrame="2614" GameHandle="0" CommandType="0" CreatePosition="6.518006, 3.108922, 0.000000"/>
+    <Command CommandFrame="2544" GameHandle="0" CommandType="0" CreatePosition="7.213074, 2.918953, 0.000000"/>
+    <Command CommandFrame="2477" GameHandle="0" CommandType="0" CreatePosition="6.954773, 3.571808, 0.000000"/>
+    <Command CommandFrame="2363" GameHandle="0" CommandType="0" CreatePosition="3.205123, 7.180046, 0.000000"/>
+    <Command CommandFrame="2250" GameHandle="0" CommandType="1" CreatePosition="5.688129, 0.799622, 0.000000"/>
+    <Command CommandFrame="2107" GameHandle="0" CommandType="1" CreatePosition="4.752061, 0.751620, 0.000000"/>
+    <Command CommandFrame="1997" GameHandle="0" CommandType="1" CreatePosition="3.799591, 0.891827, 0.000000"/>
+    <Command CommandFrame="1901" GameHandle="0" CommandType="1" CreatePosition="2.983558, 1.198666, 0.000000"/>
+    <Command CommandFrame="1730" GameHandle="0" CommandType="1" CreatePosition="2.013032, 2.096439, 0.000000"/>
+    <Command CommandFrame="1616" GameHandle="0" CommandType="1" CreatePosition="1.345939, 3.488431, 0.000000"/>
+    <Command CommandFrame="1513" GameHandle="0" CommandType="1" CreatePosition="1.173651, 4.878262, 0.000000"/>
+</Root>

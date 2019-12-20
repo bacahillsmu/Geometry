@@ -1,0 +1,11 @@
+<material id="building/hut">
+
+  <shader   src="Data/Shaders/DefaultLit.00.shader"/>
+  <diffuse  src="Data/Images/towncenter.color.png" />
+  <normal   src="Data/Normals/towncenter.normal.png" />
+  <spec     src="" />
+  <emissive src="" />
+
+  <sampler idx="0" type="linear" />
+
+</material>

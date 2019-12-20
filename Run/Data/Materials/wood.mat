@@ -1,0 +1,11 @@
+<material id="building/towncenter">
+
+  <shader   src="Data/Shaders/DefaultLit.00.shader"/>
+  <diffuse  src="Data/Images/wood.png" />
+  <normal   src="Data/Normals/wood.png" />
+  <spec     src="" />
+  <emissive src="" />
+
+  <sampler idx="0" type="linear" />
+
+</material>

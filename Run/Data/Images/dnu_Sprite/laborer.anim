@@ -1,0 +1,10 @@
+<animset id="laborer">
+   <anim id       = "laborer.walk" 
+      texture     = "image/sprites/Laborer_spritesheet_walk.png"
+      size        = "256, 256"
+      ppu         = "128, 128"
+      pivot       = ".5, .25"
+      frames      = "7"
+      frametime   = "0.05" />
+
+</animset>

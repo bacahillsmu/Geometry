@@ -1,0 +1,11 @@
+<material id="bitangent">
+  <shader src="Data/Shaders/BiTangentShader.shader"/>
+  
+  <diffuse src="" />
+  <normal  src="" />
+  <spec    src="" />
+  <emissive src="" />
+
+  <sampler idx="0" type="linear" />
+
+</material>

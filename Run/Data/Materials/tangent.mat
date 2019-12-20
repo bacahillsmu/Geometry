@@ -1,0 +1,11 @@
+<material id="tangent">
+  <shader src="Data/Shaders/TangentShader.shader"/>
+  
+  <diffuse src="" />
+  <normal  src="" />
+  <spec    src="" />
+  <emissive src="" />
+
+  <sampler idx="0" type="linear" />
+
+</material>

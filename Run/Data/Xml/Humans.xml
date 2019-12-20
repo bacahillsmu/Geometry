@@ -1,0 +1,246 @@
+<root id="humans">
+
+	<!-- Units -->
+	<!-- Peon -->
+	<unit type = "Peon"
+		health = "50"
+		supply = "1"
+		armor = "0"
+		attack = "5"
+		range = ".3"
+		attackSpeed = "1.8"
+		speed = "2.5"
+		buildtime = "5"
+		selectable = "true"
+		physicsRadius = "0.15"
+		height = "0.3" 
+		canBeRepaired = "false"
+		providesSupply = "false">
+
+		<cost wood = "25" mineral = "25"/>
+
+		<animset>
+			<anim id = "idle" 	src = "peon.idle"/>
+			<anim id = "walk" 	src = "peon.walk"/>
+			<anim id = "attack" src = "peon.attack"/>
+			<anim id = "dead" 	src = "peon.dead"/>
+		</animset>
+
+		<tasks>
+			<task type = "move" hotkeyLabel = "[M]ove"/>
+			<task type = "attack" hotkeyLabel = "[A]ttack"/>
+			<task type = "follow" hotkeyLabel = "[F]ollow"/>
+			<task type = "gather" hotkeyLabel = "[G]ather"/>
+			<task type = "repair" hotkeyLabel = "[R]epair"/>
+			<task type = "buildtowncenter"  hotkeyLabel = "Build Town [C]enter" structure = "towncenter"/>
+			<task type = "buildhut"  hotkeyLabel = "Build [H]ut" structure = "hut"/>
+			<task type = "buildtower"  hotkeyLabel = "Build [T]ower" structure = "tower"/>
+		</tasks>
+
+	</unit>
+
+	<!-- Warrior -->
+	<unit type = "Warrior"
+		health = "100"
+		supply = "1"
+		armor = "0"
+		attack = "7"
+		range = ".2"
+		attackSpeed = "1.8"
+		speed = "3"
+		buildtime = "10"
+		selectable = "true"
+		physicsRadius = "0.15"
+		height = "0.3" 
+		canBeRepaired = "false"
+		providesSupply = "false">
+
+		<cost wood = "50" mineral = "25"/>
+
+		<animset>
+			<anim id = "idle" 	src = "warrior.idle"/>
+			<anim id = "walk" 	src = "warrior.walk"/>
+			<anim id = "attack" src = "warrior.attack"/>
+			<anim id = "dead" 	src = "warrior.dead"/>
+		</animset>
+
+		<tasks>
+			<task type = "move" hotkeyLabel = "[M]ove"/>
+			<task type = "attack" hotkeyLabel = "[A]ttack"/>
+			<task type = "follow" hotkeyLabel = "[F]ollow"/>
+		</tasks>
+		
+	</unit>
+
+	<!-- Goblin -->
+	<unit type = "Goblin"
+		health = "50"
+		supply = "1"
+		armor = "0"
+		attack = "7"
+		range = ".2"
+		attackSpeed = "1.8"
+		speed = "3"
+		buildtime = "5"
+		selectable = "true"
+		physicsRadius = "0.15"
+		height = "0.3" 
+		canBeRepaired = "false"
+		providesSupply = "false">
+
+		<cost wood = "25" mineral = "25"/>
+
+		<animset>
+			<anim id = "idle" 	src = "goblin.idle"/>
+			<anim id = "walk" 	src = "goblin.walk"/>
+			<anim id = "attack" src = "goblin.attack"/>
+			<anim id = "dead" 	src = "goblin.dead"/>
+		</animset>
+
+		<tasks>
+			<task type = "move" hotkeyLabel = "[M]ove"/>
+			<task type = "attack" hotkeyLabel = "[A]ttack"/>
+			<task type = "follow" hotkeyLabel = "[F]ollow"/>
+			<task type = "gather" hotkeyLabel = "[G]ather"/>
+			<task type = "repair" hotkeyLabel = "[R]epair"/>
+			<task type = "buildgoblinhut"  hotkeyLabel = "Build Goblin [H]ut" structure = "goblinhut"/>
+			<task type = "buildgoblintower"  hotkeyLabel = "Build Goblin [T]ower" structure = "goblintower"/>
+		</tasks>
+		
+	</unit>
+
+	<!-- Buildings -->
+	<!-- TownCenter -->
+	<unit type = "TownHall"
+		health = "400"
+		supply = "10"
+		armor = "0"
+		attack = "0"
+		range = "0"
+		speed = "0"
+		attackSpeed = "0"
+		buildtime = "5"
+		selectable = "true"
+		physicsRadius = "1.2"
+		height = "0.0" 
+		canBeRepaired = "true"
+		providesSupply = "true">
+
+		<cost wood = "1" mineral = "0"/>
+		<model filename = "Data/Meshes/towncenter.mesh"/>
+		<occupancy offset = "1, 1" size = "3, 3"/>
+
+		<tasks>
+			<task type = "trainpeon" hotkeyLabel = "[P]eon" unit = "Peon"/>
+			<task type = "traingoblin" hotkeyLabel = "[G]oblin" unit = "Goblin"/>
+			<task type = "trainwarrior" hotkeyLabel = "[W]arrior" unit = "Warrior"/>
+			<task type = "rally" hotkeyLabel = "[R]ally"/>
+		</tasks>
+		
+	</unit>
+
+	<!-- Hut -->
+	<unit type = "Hut"
+		health = "100"
+		supply = "8"
+		armor = "0"
+		attack = "0"
+		range = "0"
+		speed = "0"
+		attackSpeed = "0"
+		buildtime = "6"
+		selectable = "true"
+		physicsRadius = "0.3"
+		height = "0.0" 
+		canBeRepaired = "true"
+		providesSupply = "true">
+
+		<cost wood = "1" mineral = "0"/>
+		<model filename = "Data/Meshes/hut.mesh"/>
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+		<tasks>
+		</tasks>
+		
+	</unit>
+
+	<!-- Tower -->
+	<unit type = "Tower"
+		health = "250"
+		supply = "0"
+		armor = "0"
+		attack = "0"
+		range = "0"
+		speed = "0"
+		attackSpeed = "0"
+		buildtime = "6"
+		selectable = "true"
+		physicsRadius = "0.25"
+		height = "0.0" 
+		canBeRepaired = "true"
+		providesSupply = "false">
+
+		<cost wood = "1" mineral = "0"/>
+		<model filename = "Data/Meshes/tower.mesh"/>
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+		<tasks>
+		</tasks>
+		
+	</unit>
+
+	<!-- GoblinHut -->
+	<unit type = "GoblinHut"
+		health = "100"
+		supply = "8"
+		armor = "0"
+		attack = "0"
+		range = "0"
+		speed = "0"
+		attackSpeed = "0"
+		buildtime = "6"
+		selectable = "true"
+		physicsRadius = "0.45"
+		height = "0.0" 
+		canBeRepaired = "true"
+		providesSupply = "true">
+
+		<cost wood = "1" mineral = "0"/>
+		<model filename = "Data/Meshes/goblinhut.mesh"/>
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+		<tasks>
+			<task type = "traingoblin" hotkeyLabel = "[G]oblin" unit = "Goblin"/>
+		</tasks>
+		
+	</unit>
+
+	<!-- GoblinTower -->
+	<unit type = "GoblinTower"
+		health = "250"
+		supply = "0"
+		armor = "0"
+		attack = "0"
+		range = "0"
+		speed = "0"
+		attackSpeed = "0"
+		buildtime = "6"
+		selectable = "true"
+		physicsRadius = "0.25"
+		height = "0.0" 
+		canBeRepaired = "true"
+		providesSupply = "false">
+
+		<cost wood = "1" mineral = "0"/>
+		<model filename = "Data/Meshes/goblintower.mesh"/>
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+		<tasks>
+		</tasks>
+		
+	</unit>
+
+
+
+
+</root>

@@ -1,0 +1,10 @@
+<meshes invert="false"
+		  tangents="true"
+		  scale="0.001953125"
+		  transform="-y -z -x">
+
+	<mesh id="building/hut" src="Data/Models/GoblinHut.obj">
+
+		<material index="0" src="Data/Materials/goblinhut.mat" />
+	</mesh>
+</meshes>

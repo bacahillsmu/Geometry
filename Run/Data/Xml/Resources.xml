@@ -1,0 +1,80 @@
+<root id="resources">
+
+	<!-- Pine -->
+	<resource type = "pinewhole" 
+		physicsRadius = "0.15"
+		health = "500" 
+		resourceType = "wood"
+		filename = "Data/Meshes/pinewhole.mesh">
+
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+	</resource>
+
+	<!-- Pine -->
+	<resource type = "pinebark" 
+		physicsRadius = "0.15"
+		health = "500" 
+		resourceType = "wood"
+		filename = "Data/Meshes/pinebark.mesh">
+
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+	</resource>	
+
+	<!-- Pine -->
+	<resource type = "pinestump" 
+		physicsRadius = "0.15"
+		health = "500" 
+		resourceType = "wood"
+		filename = "Data/Meshes/pinestump.mesh">
+
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+	</resource>
+
+	<!-- Pine -->
+	<resource type = "pineleaves" 
+		physicsRadius = "0.15"
+		health = "500" 
+		resourceType = "wood"
+		filename = "Data/Meshes/pineleaves.mesh">
+
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+	</resource>
+
+	<!-- Minerals -->
+	<resource type = "fullmineral" 
+		physicsRadius = "0.15"
+		health = "500" 
+		resourceType = "mineral"
+		filename = "Data/Meshes/fullmineral.mesh">
+
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+	</resource>
+
+	<!-- Minerals -->
+	<resource type = "middlemineral" 
+		physicsRadius = "0.15"
+		health = "500" 
+		resourceType = "mineral"
+		filename = "Data/Meshes/middlemineral.mesh">
+
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+	</resource>	
+
+	<!-- Minerals -->
+	<resource type = "emptymineral" 
+		physicsRadius = "0.15"
+		health = "500" 
+		resourceType = "mineral"
+		filename = "Data/Meshes/emptymineral.mesh">
+
+		<occupancy offset = "0, 0" size = "1, 1"/>
+
+	</resource>
+
+</root>

@@ -1,0 +1,11 @@
+<material id="building/hut">
+
+  <shader   src="Data/Shaders/DefaultLit.00.shader"/>
+  <diffuse  src="Data/Images/goblin.diffuse.png" />
+  <normal   src="Data/Normals/goblin.normal.png" />
+  <spec     src="" />
+  <emissive src="" />
+
+  <sampler idx="0" type="linear" />
+
+</material>

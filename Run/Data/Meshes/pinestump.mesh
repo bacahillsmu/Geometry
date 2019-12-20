@@ -1,0 +1,11 @@
+<meshes invert="false"
+		  tangents="true"
+		  scale="0.001953125"
+		  transform="-y -z -x">
+
+	<mesh id="pine01.bark" src="Data/Models/Foliage/Trees/pine01.stump.obj">
+
+		<material index="0" src="Data/Materials/foliage.mat" />
+
+	</mesh>
+</meshes>

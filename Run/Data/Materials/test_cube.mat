@@ -1,0 +1,11 @@
+<material id="test/cube">
+
+  <shader   src="Data/Shaders/DefaultLit.00.shader"/>
+  <diffuse  src="Data/Images/test_color.png" />
+  <normal   src="" />
+  <spec     src="" />
+  <emissive src="" />
+
+  <sampler idx="0" type="linear" />
+
+</material>

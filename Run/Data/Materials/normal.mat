@@ -1,0 +1,11 @@
+<material id="couch">
+  <shader src="Data/Shaders/NormalShader.shader"/>
+  
+  <diffuse src="" />
+  <normal  src="" />
+  <spec    src="" />
+  <emissive src="" />
+
+  <sampler idx="0" type="linear" />
+
+</material>

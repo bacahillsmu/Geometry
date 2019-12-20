@@ -1,0 +1,11 @@
+<meshes invert="false"
+		  tangents="true"
+		  scale="0.00390625"
+		  transform="-y -z -x">
+
+	<mesh id="building/wood" src="Data/Models/wood.obj">
+
+	    <material index="0" src="Data/Materials/wood.mat" />
+	    
+	</mesh>
+</meshes>
