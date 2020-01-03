@@ -43,6 +43,8 @@
 // Callbacks
 static bool PythonTest(EventArgs& args)
 {
+	UNUSED(args);
+
 	const wchar_t* program = L"TestProgram";
 
 	// Pre Setup;
@@ -182,8 +184,9 @@ static bool JoinServerAsClient(EventArgs& args)
 
 static bool GetReport(EventArgs& args)
 {
+	UNUSED(args);
+
 	g_theProfilerReport->GetFrameInHistory();
-	
 	
 	return true;
 }
