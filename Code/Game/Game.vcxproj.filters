@@ -11,29 +11,8 @@
     <Filter Include="General\Framework">
       <UniqueIdentifier>{dcb6af98-8328-44b4-9510-7ad7fffbcdc1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="General\Gameplay\Map">
-      <UniqueIdentifier>{9a995d9b-139f-411b-be78-93ae7607de1e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="General\Gameplay\Camera">
-      <UniqueIdentifier>{0c964f3c-a0a7-453c-91a6-a1e5a0a9fdf7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="General\Gameplay\UI">
-      <UniqueIdentifier>{0360d5de-6711-45a6-844d-dcc5d0a4178f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="General\Gameplay\EntityUnits">
-      <UniqueIdentifier>{e66198d1-23ae-476d-ba94-202cfd7526cb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="General\Gameplay\Input">
-      <UniqueIdentifier>{78ea15da-ff7d-4205-a3b0-5c117a42627e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="General\Gameplay\Lobby">
-      <UniqueIdentifier>{82016ed4-1854-4196-92fd-14b2b64d866e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="General\Gameplay\Pathing">
-      <UniqueIdentifier>{33361f66-c40f-4b47-b1cf-42995d3caaeb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="General\Framework\Jobs">
-      <UniqueIdentifier>{61649559-96ab-4cde-abee-93c4179c7718}</UniqueIdentifier>
+    <Filter Include="General\Input">
+      <UniqueIdentifier>{a97c4648-1292-458d-b4fd-0a9207061810}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,71 +22,17 @@
     <ClInclude Include="Framework\GameCommon.hpp">
       <Filter>General\Framework</Filter>
     </ClInclude>
-    <ClInclude Include="Gameplay\Entity.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
     <ClInclude Include="Gameplay\Game.hpp">
       <Filter>General\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="Gameplay\PhysicsObject.hpp">
+    <ClInclude Include="EngineBuildPreferences.hpp">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\GameInput.hpp">
+      <Filter>General\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Gameplay\ConwaysGameOfLife.hpp">
       <Filter>General\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\RigidBody2D.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\Collider2D.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\PhysicsSystem.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\Map\Map.hpp">
-      <Filter>General\Gameplay\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\Camera\OrbitCamera.hpp">
-      <Filter>General\Gameplay\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\UI\UIWidget.hpp">
-      <Filter>General\Gameplay\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\Input\PlayerController.hpp">
-      <Filter>General\Gameplay\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\GameHandle.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\RTSCommand.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\RTSTask.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\EntityUnits\Peon.hpp">
-      <Filter>General\Gameplay\EntityUnits</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\EntityUnits\Warrior.hpp">
-      <Filter>General\Gameplay\EntityUnits</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\CommandFrame.hpp">
-      <Filter>General\Framework</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\Input\ReplayController.hpp">
-      <Filter>General\Gameplay\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\EntityDefinition.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\Lobby\LobbyConsole.hpp">
-      <Filter>General\Gameplay\Lobby</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\Pathing\Pathing.hpp">
-      <Filter>General\Gameplay\Pathing</Filter>
-    </ClInclude>
-    <ClInclude Include="Gameplay\Input\AIController.hpp">
-      <Filter>General\Gameplay\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Framework\Jobs\PathJob.hpp">
-      <Filter>General\Framework\Jobs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -117,76 +42,14 @@
     <ClCompile Include="Framework\App.cpp">
       <Filter>General\Framework</Filter>
     </ClCompile>
-    <ClCompile Include="Gameplay\Entity.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
     <ClCompile Include="Gameplay\Game.cpp">
       <Filter>General\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="Gameplay\PhysicsObject.cpp">
+    <ClCompile Include="Input\GameInput.cpp">
+      <Filter>General\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay\ConwaysGameOfLife.cpp">
       <Filter>General\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="Gameplay\RigidBody2D.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\Collider2D.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\PhysicsSystem.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\Map\Map.cpp">
-      <Filter>General\Gameplay\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\Camera\OrbitCamera.cpp">
-      <Filter>General\Gameplay\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\UI\UIWidget.cpp">
-      <Filter>General\Gameplay\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\Input\PlayerController.cpp">
-      <Filter>General\Gameplay\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\GameHandle.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\RTSCommand.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\RTSTask.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\EntityUnits\Peon.cpp">
-      <Filter>General\Gameplay\EntityUnits</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\EntityUnits\Warrior.cpp">
-      <Filter>General\Gameplay\EntityUnits</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\CommandFrame.cpp">
-      <Filter>General\Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\Input\ReplayController.cpp">
-      <Filter>General\Gameplay\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\EntityDefinition.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\Lobby\LobbyConsole.cpp">
-      <Filter>General\Gameplay\Lobby</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\Pathing\Pathing.cpp">
-      <Filter>General\Gameplay\Pathing</Filter>
-    </ClCompile>
-    <ClCompile Include="Gameplay\Input\AIController.cpp">
-      <Filter>General\Gameplay\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Framework\Jobs\PathJob.cpp">
-      <Filter>General\Framework\Jobs</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="..\..\Run\Data\Shaders\normal_shader.hlsl">
-      <Filter>General\Framework</Filter>
-    </FxCompile>
   </ItemGroup>
 </Project>

@@ -2,26 +2,6 @@
 #include "Game/Gameplay/Game.hpp"
 
 
-class WindowContext;
-class RandomNumberGenerator;
-class AudioSystem;
-class PhysicsSystem;
-class App;
-class PlayerController;
-class AIController;
-class ReplayController;
-class RakNetInterface;
-
-extern WindowContext* g_theWindowContext;
-extern RandomNumberGenerator* g_theRandomNumberGenerator;
-extern AudioSystem* g_theAudioSystem;
-extern PhysicsSystem* g_thePhysicsSystem;
-extern App* g_theApp;
-extern PlayerController* g_thePlayerController;
-extern AIController* g_theAIController;
-extern ReplayController* g_theReplayController;
-extern RakNetInterface* g_theRakNetInterface;
-
 // World
 constexpr float WORLD_WIDTH = 200.f;
 constexpr float WORLD_HEIGHT = 100.f;
