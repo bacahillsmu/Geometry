@@ -31,7 +31,16 @@
     <ClInclude Include="Input\GameInput.hpp">
       <Filter>General\Input</Filter>
     </ClInclude>
-    <ClInclude Include="Gameplay\ConwaysGameOfLife.hpp">
+    <ClInclude Include="Gameplay\Map.hpp">
+      <Filter>General\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Gameplay\Match.hpp">
+      <Filter>General\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Gameplay\Entity.hpp">
+      <Filter>General\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Gameplay\Player.hpp">
       <Filter>General\Gameplay</Filter>
     </ClInclude>
   </ItemGroup>
@@ -48,7 +57,16 @@
     <ClCompile Include="Input\GameInput.cpp">
       <Filter>General\Input</Filter>
     </ClCompile>
-    <ClCompile Include="Gameplay\ConwaysGameOfLife.cpp">
+    <ClCompile Include="Gameplay\Map.cpp">
+      <Filter>General\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay\Match.cpp">
+      <Filter>General\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay\Entity.cpp">
+      <Filter>General\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay\Player.cpp">
       <Filter>General\Gameplay</Filter>
     </ClCompile>
   </ItemGroup>

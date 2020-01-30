@@ -28,8 +28,8 @@
 // Game Includes ----------------------------------------------------------------------------------
 #include "Game/Framework/App.hpp"
 #include "Game/Input/GameInput.hpp"
-#include "Game/Gameplay/ConwaysGameOfLife.hpp"
-
+#include "Game/Gameplay/Match.hpp"
+#include "Game/Gameplay/Map.hpp"
 
 // Callbacks --------------------------------------------------------------------------------------
 static bool QuitGame(EventArgs& args)
@@ -49,17 +49,10 @@ Game::Game()
 // Deconstructor ----------------------------------------------------------------------------------
 Game::~Game()
 {
-	delete m_gameMainCamera;
-	m_gameMainCamera = nullptr;
-
-	delete m_uiCamera;
-	m_uiCamera = nullptr;
-
-	delete m_conwaysGameOfLife;
-	m_conwaysGameOfLife = nullptr;
-
-	delete m_masterUIWidget;
-	m_masterUIWidget = nullptr;
+	// Delete Pointers (template);
+	DELETE_POINTER(m_gameMainCamera);
+	DELETE_POINTER(m_uiCamera);
+	DELETE_POINTER(m_match);
 }
 
 // -----------------------------------------------------------------------
@@ -71,62 +64,68 @@ void Game::Init()
 	IntVec2 clientMins = g_theWindowContext->GetClientMins();
 	IntVec2 clientMaxs = g_theWindowContext->GetClientMaxs();
 
-	// Save off the Client's dimensions, keeping in mind that Windows has 0,0 is top left, we want it bottom right;
+	// Save off the Client's dimensions, keeping in mind that Windows has 0,0 is top left, we want it bottom left;
 	m_clientMins = Vec2((float)clientMins.x, (float)clientMaxs.y);
 	m_clientMaxs = Vec2((float)clientMaxs.x, (float)clientMins.y);
-
-	// Save off the World dimensions;
-	m_worldMins = m_clientMins;
-	m_worldMaxs = m_clientMaxs;
-	// m_worldMaxs = Vec2(ASPECTED_WORLD_HEIGHT, WORLD_HEIGHT);	// These are set in GameCommon;
 
 	// Game Subscription Callbacks;
 	g_theEventSystem->SubscriptionEventCallbackFunction("quit", QuitGame);
 
-	// Conways Game of Life;
-	m_conwaysGameOfLife = new ConwaysGameOfLife();
-	m_conwaysGameOfLife->Init();
-}
+	m_match				= new Match();
+	m_gameMainCamera	= new Camera();
+	m_uiCamera			= new Camera();	
 
-// -----------------------------------------------------------------------
-void Game::Startup()
-{
-	// Cameras;
-	CreateCameras();
+	m_gameMainCamera->SetOrthographicProjection(Vec2::ZERO, Vec2(Map::WIDTH, Map::HEIGHT));
+	m_uiCamera->SetOrthographicProjection(Vec2::ZERO, Vec2(Map::WIDTH, Map::HEIGHT));
 
-	// Mouse Settings;
-	g_theWindowContext->ShowMouse();							// During WindowContext's Init, we hid the mouse;
-	g_theWindowContext->SetMouseMode(MOUSE_MODE_ABSOLUTE);		// Mouse position is where the mouse is;
-	// g_theWindowContext->SetMouseMode(MOUSE_MODE_RELATIVE);	// Mouse position is locked to center;
 
-	// Conways Game of Life;
-	m_conwaysGameOfLife->Startup();
-
-	// UI;
+	/*
 	m_masterUIWidget = new UIWidget(
 		AABB2::MakeFromMinsMaxs(m_clientMins, m_clientMaxs),	// Bounding Box, entire screen;
 		Vec4(1.0f, 1.0f, 0.0f, 0.0f),							// Virtual Size, entire bounding box;
 		Vec4(0.5f, 0.5f, 0.0f, 0.0f)							// Virtual Position, center of bounding box;
 	);
+	*/
 	
+}
 
+// -----------------------------------------------------------------------
+void Game::Startup()
+{
+	// Mouse Settings;
+	g_theWindowContext->ShowMouse();							// During WindowContext's Init, we hid the mouse;
+	g_theWindowContext->SetMouseMode(MOUSE_MODE_ABSOLUTE);		// Mouse position is where the mouse is;
+	// g_theWindowContext->SetMouseMode(MOUSE_MODE_RELATIVE);	// Mouse position is locked to center;
 
+	StartLoadingAssets();
+
+	m_match->Startup();
 }
 
 // -----------------------------------------------------------------------
 void Game::BeginFrame()
 {
-	// Conways Game of Life;
-	m_conwaysGameOfLife->BeginFrame();
+	
 }
 
 // -----------------------------------------------------------------------
 void Game::Update(float deltaSeconds)
 {
-	UpdateGameCamera(deltaSeconds);
+	// Async Loading;
+	if(m_stillLoading)
+	{
+		if(!DoneLoading())
+		{
+			ContinueLoading();
+		}
+		else
+		{
+			EndLoadingThreads();
+			m_stillLoading = false;
+		}
+	}
 
-	// Conways Game of Life;
-	m_conwaysGameOfLife->Update();
+	m_match->Update(deltaSeconds);
 }
 
 // -----------------------------------------------------------------------
@@ -138,8 +137,7 @@ void Game::Render()
 	g_theRenderer->BeginCamera(m_gameMainCamera);
 	g_theRenderer->ClearColorTargets(m_clearColor);
 
-	// Conways Game of Life;
-	m_conwaysGameOfLife->Render();
+	m_match->Render();
 
 	g_theRenderer->EndCamera();
 
@@ -147,10 +145,6 @@ void Game::Render()
 	m_colorTargetView = g_theRenderer->GetFrameColorTarget();
 	m_uiCamera->SetColorTargetView(m_colorTargetView);
 	g_theRenderer->BeginCamera(m_uiCamera);
-
-
-
-
 
 	g_theRenderer->EndCamera();
 }
@@ -164,40 +158,121 @@ void Game::EndFrame()
 // -----------------------------------------------------------------------
 // Cameras;
 // -----------------------------------------------------------------------
-void Game::CreateCameras()
-{
-	// Create Game Camera that uses the World dimensions;
-	m_gameMainCamera = new Camera();
-	m_gameMainCamera->SetOrthographicProjection(m_worldMins, m_worldMaxs);
 
-	// Make an Ortho UI Camera that uses the Client's dimensions;
-	m_uiCamera = new Camera();
-	m_uiCamera->SetOrthographicProjection(m_clientMins, m_clientMaxs);
+// -----------------------------------------------------------------------
+// Assets;
+// -----------------------------------------------------------------------
+void Game::StartLoadingAssets()
+{
+	EnqueueWorkForTexturesAndGPUMeshes();
+
+	uint coreCount = std::thread::hardware_concurrency();
+	for (uint i = 0; i < coreCount; ++i)
+	{
+		//std::thread loadThread( CallImageAndMeshLoadThread ); 
+		//m_threads.push_back( loadThread );
+		m_threads.emplace_back(CallImageAndMeshLoadThread);
+	}
 }
 
 // -----------------------------------------------------------------------
-void Game::UpdateGameCamera( float deltaSeconds )
+void Game::EnqueueWorkForTexturesAndGPUMeshes()
 {
-	UpdateFocalPointPosition( deltaSeconds );
-	UpdateGameCameraPosition();	
+	StartLoadingTexture("Data/Sprites/Jobs/Knight/Knight1M-S.png");
+
+	m_stillLoading = true;
 }
 
 // -----------------------------------------------------------------------
-void Game::UpdateFocalPointPosition(float deltaSeconds)
+void Game::ImageAndMeshLoadThread()
 {
-	UNUSED(deltaSeconds);
-	m_focalPoint = m_worldMaxs / 2.0f;	// Focus on the center of the Camera;
+	bool doneLoading = false;
+
+	ImageLoading imageLoading;
+	CPUMeshLoading cpuLoading;
+
+	while (!doneLoading)
+	{
+		bool gotImageWork = imageLoadingFromDiscQueue.Dequeue(&imageLoading);
+		if (gotImageWork)
+		{
+			imageLoading.image = new Image(imageLoading.imageName.c_str());
+			imageCreatingTextureQueue.Enqueue(imageLoading);
+		}
+
+		bool gotCPUWork = cpuLoadingFromDiscQueue.Dequeue(&cpuLoading);
+		if (gotCPUWork)
+		{
+			cpuLoading.cpuMesh = new CPUMesh();
+			cpuLoading.cpuMesh->SetLayout<Vertex_Lit>();
+			CreateMeshFromFile(cpuLoading.meshName.c_str(), cpuLoading.cpuMesh);
+			cpuCreatingGPUMeshQueue.Enqueue(cpuLoading);
+		}
+
+		if (!gotImageWork && !gotCPUWork)
+		{
+			doneLoading = true;
+		}
+
+		Sleep(0);
+	}
 }
 
 // -----------------------------------------------------------------------
-void Game::UpdateGameCameraPosition()
+void Game::StartLoadingTexture(std::string nameOfTexture)
 {
-	AABB2 cameraBounds = AABB2::MakeFromMinsMaxs(m_gameMainCamera->m_minOrtho, m_gameMainCamera->m_maxOrtho);
-	Vec2 originalOffset = cameraBounds.offset;
-	cameraBounds.center = m_focalPoint;
+	ImageLoading loading = ImageLoading(nameOfTexture);
 
-	Vec2 newCameraBL = Vec2(cameraBounds.center - originalOffset);
-	Vec2 newCameraTR = Vec2(cameraBounds.center + originalOffset);
+	m_objectLoading++;
+	imageLoadingFromDiscQueue.Enqueue(loading);
+}
 
-	m_gameMainCamera->SetOrthographicProjection(newCameraBL, newCameraTR);
+// -----------------------------------------------------------------------
+void Game::ContinueLoading()
+{
+	ImageLoading imageLoading;
+	CPUMeshLoading cpuLoading;
+
+	bool gotImageWork = imageCreatingTextureQueue.Dequeue(&imageLoading);
+	if (gotImageWork)
+	{
+		g_theRenderer->CreateTextureViewFromImage(imageLoading.image, imageLoading.imageName);
+		m_objectLoading--;
+		delete imageLoading.image;
+		imageLoading.image = nullptr;
+	}
+
+	bool gotGPUWork = cpuCreatingGPUMeshQueue.Dequeue(&cpuLoading);
+	if (gotGPUWork)
+	{
+		g_theRenderer->CreateAndRegisterGPUMesh(cpuLoading.cpuMesh, cpuLoading.meshName);
+		m_objectLoading--;
+		delete cpuLoading.cpuMesh;
+		cpuLoading.cpuMesh = nullptr;
+	}
+}
+
+// -----------------------------------------------------------------------
+bool Game::DoneLoading()
+{
+	return m_objectLoading == 0;
+}
+
+// -----------------------------------------------------------------------
+void Game::EndLoadingThreads()
+{
+	for (std::thread& thread : m_threads)
+	{
+		thread.join();
+	}
+
+	m_threads.clear();
+}
+
+// -----------------------------------------------------------------------
+// static;
+// -----------------------------------------------------------------------
+void CallImageAndMeshLoadThread()
+{
+	g_theApp->m_theGame->ImageAndMeshLoadThread();
 }

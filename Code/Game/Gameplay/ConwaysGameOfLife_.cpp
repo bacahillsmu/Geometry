@@ -17,8 +17,8 @@ static bool ResetTiles(EventArgs& args)
 {
 	UNUSED(args);
 
-	g_theApp->m_theGame->m_conwaysGameOfLife->m_isRunning = false;
-	g_theApp->m_theGame->m_conwaysGameOfLife->CreateTiles();
+	//g_theApp->m_theGame->m_conwaysGameOfLife->m_isRunning = false;
+	//g_theApp->m_theGame->m_conwaysGameOfLife->CreateTiles();
 
 	return true;
 }
@@ -28,7 +28,7 @@ static bool StartConwaysGameOfLife(EventArgs& args)
 {
 	UNUSED(args);
 
-	g_theApp->m_theGame->m_conwaysGameOfLife->m_isRunning = true;
+	//g_theApp->m_theGame->m_conwaysGameOfLife->m_isRunning = true;
 
 	return true;
 }
@@ -38,7 +38,7 @@ static bool StopConwaysGameOfLife(EventArgs& args)
 {
 	UNUSED(args);
 
-	g_theApp->m_theGame->m_conwaysGameOfLife->m_isRunning = false;
+	//g_theApp->m_theGame->m_conwaysGameOfLife->m_isRunning = false;
 
 	return true;
 }
@@ -48,7 +48,7 @@ static bool StepConwaysGameOfLife(EventArgs& args)
 {
 	UNUSED(args);
 
-	g_theApp->m_theGame->m_conwaysGameOfLife->m_shouldStep = true;
+	//g_theApp->m_theGame->m_conwaysGameOfLife->m_shouldStep = true;
 
 	return true;
 }

@@ -19,9 +19,26 @@ class TextureView;
 class Prop;
 struct IntVec2;
 struct Camera;
-class ConwaysGameOfLife;
 class UIWidget;
+class Match;
 
+struct ImageLoading
+{
+	ImageLoading(){}
+	ImageLoading(std::string name_):imageName(name_){}
+
+	std::string imageName;
+	Image* image;
+};
+
+struct CPUMeshLoading
+{
+	CPUMeshLoading() {}
+	CPUMeshLoading(std::string name_):meshName(name_){}
+
+	std::string meshName;
+	CPUMesh* cpuMesh;
+};
 
 class Game
 {
@@ -41,14 +58,15 @@ public:
 	void EndFrame();
 
 	// Cameras;
-	void CreateCameras();
-	void UpdateGameCamera( float deltaSeconds );
-	void UpdateFocalPointPosition( float deltaSeconds );
-	void UpdateGameCameraPosition();
 
-	// Tiles;
-	//void CreateTiles();
-	//void ConwaysGameOfLife();
+	// Async Loading and Assets;
+	void StartLoadingAssets();
+	void EnqueueWorkForTexturesAndGPUMeshes();
+	void ImageAndMeshLoadThread();
+	void StartLoadingTexture(std::string nameOfTexture);
+	void ContinueLoading();
+	bool DoneLoading();
+	void EndLoadingThreads();
 
 
 public:
@@ -56,8 +74,6 @@ public:
 	// Game Bounds;
 	Vec2 m_clientMins					= Vec2(0.0f, 0.0f);
 	Vec2 m_clientMaxs					= Vec2(0.0f, 0.0f);
-	Vec2 m_worldMins					= Vec2(0.0f, 0.0f);
-	Vec2 m_worldMaxs					= Vec2(0.0f, 0.0f);
 	
 	// Cameras;
 	Camera* m_gameMainCamera			= nullptr;
@@ -68,10 +84,18 @@ public:
 	ColorTargetView* m_colorTargetView	= nullptr;
 	Rgba m_clearColor					= Rgba(0.5f, 0.5f, 0.5f, 1.0f);
 
-	// Conways Game of Life;
-	ConwaysGameOfLife* m_conwaysGameOfLife = nullptr;
+	// Async Loading and Assets;
+	bool m_stillLoading = false;
+	int m_objectLoading = 0;
+	std::vector<std::thread> m_threads;
+	AsyncQueue<ImageLoading> imageLoadingFromDiscQueue;
+	AsyncQueue<ImageLoading> imageCreatingTextureQueue;
+	AsyncQueue<CPUMeshLoading> cpuLoadingFromDiscQueue;
+	AsyncQueue<CPUMeshLoading> cpuCreatingGPUMeshQueue;
 
-	// UI;
-	UIWidget* m_masterUIWidget = nullptr;
+	// Match;
+	Match* m_match = nullptr;
 
 };
+
+void CallImageAndMeshLoadThread();

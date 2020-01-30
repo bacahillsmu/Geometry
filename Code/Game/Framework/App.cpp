@@ -25,16 +25,6 @@
 // Global Singletons ------------------------------------------------------------------------------
 App* g_theApp = nullptr;
 
-template<typename T>
-void DELETE_SYSTEM_POINTER(T* ptr)
-{
-	if (ptr)
-	{
-		delete ptr;
-		ptr = nullptr;
-	}
-}
-
 // Constructor ------------------------------------------------------------------------------------
 App::App()
 {
@@ -109,14 +99,14 @@ void App::Shutdown()
 	g_theInputSystem->Shutdown();
 
 	// Delete System Pointers (template);
-	DELETE_SYSTEM_POINTER(g_theEventSystem);
-	DELETE_SYSTEM_POINTER(g_theDevConsole);
-	DELETE_SYSTEM_POINTER(g_theRandomNumberGenerator);
-	DELETE_SYSTEM_POINTER(g_theAudioSystem);
-	DELETE_SYSTEM_POINTER(g_theDebugRenderer);
-	DELETE_SYSTEM_POINTER(g_theRenderer);
-	DELETE_SYSTEM_POINTER(g_theGameInput);
-	DELETE_SYSTEM_POINTER(g_theInputSystem);
+	DELETE_POINTER(g_theEventSystem);
+	DELETE_POINTER(g_theDevConsole);
+	DELETE_POINTER(g_theRandomNumberGenerator);
+	DELETE_POINTER(g_theAudioSystem);
+	DELETE_POINTER(g_theDebugRenderer);
+	DELETE_POINTER(g_theRenderer);
+	DELETE_POINTER(g_theGameInput);
+	DELETE_POINTER(g_theInputSystem);
 }
 
 // -----------------------------------------------------------------------
