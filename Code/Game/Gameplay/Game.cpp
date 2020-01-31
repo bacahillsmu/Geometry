@@ -28,7 +28,6 @@
 // Game Includes ----------------------------------------------------------------------------------
 #include "Game/Framework/App.hpp"
 #include "Game/Input/GameInput.hpp"
-#include "Game/Gameplay/Match.hpp"
 #include "Game/Gameplay/Map.hpp"
 
 // Callbacks --------------------------------------------------------------------------------------
@@ -52,7 +51,7 @@ Game::~Game()
 	// Delete Pointers (template);
 	DELETE_POINTER(m_gameMainCamera);
 	DELETE_POINTER(m_uiCamera);
-	DELETE_POINTER(m_match);
+	DELETE_POINTER(m_map);
 }
 
 // -----------------------------------------------------------------------
@@ -71,7 +70,7 @@ void Game::Init()
 	// Game Subscription Callbacks;
 	g_theEventSystem->SubscriptionEventCallbackFunction("quit", QuitGame);
 
-	m_match				= new Match();
+	m_map				= new Map();
 	m_gameMainCamera	= new Camera();
 	m_uiCamera			= new Camera();	
 
@@ -97,9 +96,20 @@ void Game::Startup()
 	g_theWindowContext->SetMouseMode(MOUSE_MODE_ABSOLUTE);		// Mouse position is where the mouse is;
 	// g_theWindowContext->SetMouseMode(MOUSE_MODE_RELATIVE);	// Mouse position is locked to center;
 
+	m_clearColor = Rgba::BLACK;
+
 	StartLoadingAssets();
 
-	m_match->Startup();
+	for(int i = 0; i < 8; ++i)
+	{
+
+
+
+	}
+
+
+	m_map = new Map();
+	m_map->Startup();
 }
 
 // -----------------------------------------------------------------------
@@ -125,7 +135,7 @@ void Game::Update(float deltaSeconds)
 		}
 	}
 
-	m_match->Update(deltaSeconds);
+	m_map->Update(deltaSeconds);
 }
 
 // -----------------------------------------------------------------------
@@ -137,7 +147,7 @@ void Game::Render()
 	g_theRenderer->BeginCamera(m_gameMainCamera);
 	g_theRenderer->ClearColorTargets(m_clearColor);
 
-	m_match->Render();
+	m_map->Render();
 
 	g_theRenderer->EndCamera();
 
@@ -261,9 +271,9 @@ bool Game::DoneLoading()
 // -----------------------------------------------------------------------
 void Game::EndLoadingThreads()
 {
-	for (std::thread& thread : m_threads)
+	for (std::thread& t : m_threads)
 	{
-		thread.join();
+		t.join();
 	}
 
 	m_threads.clear();

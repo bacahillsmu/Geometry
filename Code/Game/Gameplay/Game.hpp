@@ -4,6 +4,7 @@
 #include "Engine/Math/IntVec2.hpp"
 #include "Engine/Renderer/Shader.hpp"
 #include "Engine/Math/AABB2.hpp"
+#include "Game/Shapes/ConvexPoly.hpp"
 
 #include <chrono>
 #include <queue>
@@ -20,7 +21,7 @@ class Prop;
 struct IntVec2;
 struct Camera;
 class UIWidget;
-class Match;
+class Map;
 
 struct ImageLoading
 {
@@ -82,7 +83,7 @@ public:
 
 	// Color Target View;
 	ColorTargetView* m_colorTargetView	= nullptr;
-	Rgba m_clearColor					= Rgba(0.5f, 0.5f, 0.5f, 1.0f);
+	Rgba m_clearColor					= Rgba(1.0f, 1.0f, 1.0f, 1.0f);
 
 	// Async Loading and Assets;
 	bool m_stillLoading = false;
@@ -93,8 +94,11 @@ public:
 	AsyncQueue<CPUMeshLoading> cpuLoadingFromDiscQueue;
 	AsyncQueue<CPUMeshLoading> cpuCreatingGPUMeshQueue;
 
-	// Match;
-	Match* m_match = nullptr;
+	// Map;
+	Map* m_map = nullptr;
+
+	// Shapes;
+	std::vector<ConvexPoly2D> m_convexPoly2Ds;
 
 };
 

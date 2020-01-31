@@ -14,6 +14,9 @@
     <Filter Include="General\Input">
       <UniqueIdentifier>{a97c4648-1292-458d-b4fd-0a9207061810}</UniqueIdentifier>
     </Filter>
+    <Filter Include="General\Shapes">
+      <UniqueIdentifier>{cc3ae38e-b50e-4038-9ef9-74bbc2e6fd1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\App.hpp">
@@ -34,14 +37,14 @@
     <ClInclude Include="Gameplay\Map.hpp">
       <Filter>General\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="Gameplay\Match.hpp">
-      <Filter>General\Gameplay</Filter>
-    </ClInclude>
     <ClInclude Include="Gameplay\Entity.hpp">
       <Filter>General\Gameplay</Filter>
     </ClInclude>
     <ClInclude Include="Gameplay\Player.hpp">
       <Filter>General\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Shapes\ConvexPoly.hpp">
+      <Filter>General\Shapes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -60,14 +63,14 @@
     <ClCompile Include="Gameplay\Map.cpp">
       <Filter>General\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="Gameplay\Match.cpp">
-      <Filter>General\Gameplay</Filter>
-    </ClCompile>
     <ClCompile Include="Gameplay\Entity.cpp">
       <Filter>General\Gameplay</Filter>
     </ClCompile>
     <ClCompile Include="Gameplay\Player.cpp">
       <Filter>General\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Shapes\ConvexPoly.cpp">
+      <Filter>General\Shapes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

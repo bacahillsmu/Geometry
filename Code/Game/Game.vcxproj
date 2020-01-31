@@ -24,7 +24,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Starship</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <ProjectName>Proto</ProjectName>
+    <ProjectName>Geometry</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -198,9 +198,9 @@
     <ClInclude Include="Gameplay\Entity.hpp" />
     <ClInclude Include="Gameplay\Game.hpp" />
     <ClInclude Include="Gameplay\Map.hpp" />
-    <ClInclude Include="Gameplay\Match.hpp" />
     <ClInclude Include="Gameplay\Player.hpp" />
     <ClInclude Include="Input\GameInput.hpp" />
+    <ClInclude Include="Shapes\ConvexPoly.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework\App.cpp" />
@@ -208,9 +208,9 @@
     <ClCompile Include="Gameplay\Entity.cpp" />
     <ClCompile Include="Gameplay\Game.cpp" />
     <ClCompile Include="Gameplay\Map.cpp" />
-    <ClCompile Include="Gameplay\Match.cpp" />
     <ClCompile Include="Gameplay\Player.cpp" />
     <ClCompile Include="Input\GameInput.cpp" />
+    <ClCompile Include="Shapes\ConvexPoly.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Submodule\Engine\Code\Engine\Engine.vcxproj">
