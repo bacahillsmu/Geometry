@@ -16,12 +16,34 @@ enum BracketKeys
 	BRACKETKEYS_RIGHT
 };
 
-enum WASD
+enum Key
 {
-	WASD_W,
-	WASD_A,
-	WASD_S,
-	WASD_D
+	KEY_A,
+	KEY_B,
+	KEY_C,
+	KEY_D,
+	KEY_E,
+	KEY_F,
+	KEY_G,
+	KEY_H,
+	KEY_I,
+	KEY_J,
+	KEY_K,
+	KEY_L,
+	KEY_M,
+	KEY_N,
+	KEY_O,
+	KEY_P,
+	KEY_Q,
+	KEY_R,
+	KEY_S,
+	KEY_T,
+	KEY_U,
+	KEY_V,
+	KEY_W,
+	KEY_X,
+	KEY_Y,
+	KEY_Z
 };
 
 class GameInput
@@ -47,11 +69,17 @@ public:
 	bool IsRightBracketKeyPressed();
 	bool IsSpacebarPressed();
 
-	// WASD;
+	// Keyboard;
 	bool IsWKeyPressed();
 	bool IsAKeyPressed();
 	bool IsSPressed();
 	bool IsDKeyPressed();
+	bool IsMKeyPressed();
+	bool IsNKeyPressed();
+	bool IsLKeyPressed();
+	bool IsKKeyPressed();
+	bool IsEKeyPressed();
+	bool IsSKeyPressed();
 
 	// Character Keys;
 	bool HandleChar(unsigned char asKey_);
@@ -60,13 +88,17 @@ public:
 	bool HandleKeyPressed(unsigned char asKey_);
 	bool HandleKeyReleased(unsigned char asKey_);
 
+	// Additional Game Keys;
+	bool IsF8Pressed();
+
 private:
 
 	// Keyboard Input;
 	bool m_arrowKeys[4];
 	bool m_bracketKeys[2];
-	bool m_WASD[4];
+	bool m_keyboard[26];
 	bool m_spacebarPressed = false;
+	bool m_F8Pressed = false;
 };
 
 extern GameInput* g_theGameInput;

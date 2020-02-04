@@ -24,7 +24,6 @@ public:
 
 public:
 
-	Vec2 m_worldMousePosition;
 
 
 

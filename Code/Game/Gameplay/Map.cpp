@@ -42,15 +42,14 @@ void Map::Startup()
 // ------------------------------------------------------------------------------------------------
 void Map::Update(float deltaSeconds_)
 {
-	m_worldMousePosition.x = RangeMap(g_theInputSystem->GetMousePosition().x, 0.0f, (float)g_theWindowContext->GetClientDimensions().x, 0.0f, WIDTH);
-	m_worldMousePosition.y = RangeMap(g_theInputSystem->GetMousePosition().y, 0.0f, (float)g_theWindowContext->GetClientDimensions().y, 0.0f, HEIGHT);
+	
 }
 
 // ------------------------------------------------------------------
 void Map::Render()
 {
 	std::vector<Vertex_PCU> mouseVerts;
-	AddVertsForDisc2D(mouseVerts, m_worldMousePosition, 1.0f, Rgba::WHITE);
+	AddVertsForDisc2D(mouseVerts, g_theApp->m_theGame->m_worldMousePosition, 1.0f, Rgba::BLACK);
 
 	g_theRenderer->BindShader("Data/Shaders/default_unlit_devconsole.shader");
 	g_theRenderer->BindTextureViewWithSampler(0, nullptr);
