@@ -80,7 +80,7 @@ void GameInput::EndFrame()
 	m_keyboard[KEY_B] = false;
 	m_keyboard[KEY_C] = false;
 	m_keyboard[KEY_D] = false;
-	m_keyboard[KEY_E] = false;
+	//m_keyboard[KEY_E] = false;
 	m_keyboard[KEY_F] = false;
 	m_keyboard[KEY_G] = false;
 	m_keyboard[KEY_H] = false;
@@ -94,7 +94,7 @@ void GameInput::EndFrame()
 	m_keyboard[KEY_P] = false;
 	m_keyboard[KEY_Q] = false;
 	m_keyboard[KEY_R] = false;
-	m_keyboard[KEY_S] = false;
+	//m_keyboard[KEY_S] = false;
 	m_keyboard[KEY_T] = false;
 	m_keyboard[KEY_U] = false;
 	m_keyboard[KEY_V] = false;
@@ -206,14 +206,46 @@ bool GameInput::IsKKeyPressed()
 	return m_keyboard[KEY_K];
 }
 
+// -----------------------------------------------------------------------
 bool GameInput::IsEKeyPressed()
 {
 	return m_keyboard[KEY_E];
 }
 
+// -----------------------------------------------------------------------
 bool GameInput::IsSKeyPressed()
 {
 	return m_keyboard[KEY_S];
+}
+
+// -----------------------------------------------------------------------
+bool GameInput::IsBKeyPressed()
+{
+	return m_keyboard[KEY_B];
+}
+
+// -----------------------------------------------------------------------
+bool GameInput::IsVKeyPressed()
+{
+	return m_keyboard[KEY_V];
+}
+
+// -----------------------------------------------------------------------
+bool GameInput::IsCKeyPressed()
+{
+	return m_keyboard[KEY_C];
+}
+
+// -----------------------------------------------------------------------
+bool GameInput::IsXKeyPressed()
+{
+	return m_keyboard[KEY_X];
+}
+
+// -----------------------------------------------------------------------
+bool GameInput::IsQKeyPressed()
+{
+	return m_keyboard[KEY_Q];
 }
 
 // -----------------------------------------------------------------------
@@ -335,6 +367,36 @@ bool GameInput::HandleKeyPressed(unsigned char asKey_)
 
 		virtualKeyHandled = true;
 	}
+	else if (asKey_ == 'B')
+	{
+		m_keyboard[KEY_B] = true;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'V')
+	{
+		m_keyboard[KEY_V] = true;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'C')
+	{
+		m_keyboard[KEY_C] = true;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'X')
+	{
+		m_keyboard[KEY_X] = true;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'Q')
+	{
+		m_keyboard[KEY_Q] = true;
+
+		virtualKeyHandled = true;
+	}
 	else if (asKey_ == VirtualKey::SPACEBAR)
 	{
 		m_spacebarPressed = true;
@@ -450,6 +512,36 @@ bool GameInput::HandleKeyReleased(unsigned char asKey_)
 	else if (asKey_ == 'S')
 	{
 		m_keyboard[KEY_S] = false;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'B')
+	{
+		m_keyboard[KEY_B] = false;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'V')
+	{
+		m_keyboard[KEY_V] = false;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'C')
+	{
+		m_keyboard[KEY_C] = false;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'X')
+	{
+		m_keyboard[KEY_X] = false;
+
+		virtualKeyHandled = true;
+	}
+	else if (asKey_ == 'Q')
+	{
+		m_keyboard[KEY_Q] = false;
 
 		virtualKeyHandled = true;
 	}

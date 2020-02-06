@@ -201,6 +201,7 @@
     <ClInclude Include="Gameplay\Player.hpp" />
     <ClInclude Include="Input\GameInput.hpp" />
     <ClInclude Include="Shapes\ConvexPoly.hpp" />
+    <ClInclude Include="SpatialHashing\SpatialHashingDisc.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework\App.cpp" />
@@ -211,6 +212,7 @@
     <ClCompile Include="Gameplay\Player.cpp" />
     <ClCompile Include="Input\GameInput.cpp" />
     <ClCompile Include="Shapes\ConvexPoly.cpp" />
+    <ClCompile Include="SpatialHashing\SpatialHashingDisc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Submodule\Engine\Code\Engine\Engine.vcxproj">

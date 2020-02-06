@@ -49,7 +49,7 @@ void Map::Update(float deltaSeconds_)
 void Map::Render()
 {
 	std::vector<Vertex_PCU> mouseVerts;
-	AddVertsForDisc2D(mouseVerts, g_theApp->m_theGame->m_worldMousePosition, 1.0f, Rgba::BLACK);
+	AddVertsForDisc2D(mouseVerts, g_theApp->m_theGame->m_worldMousePosition, 0.5f, g_theApp->m_theGame->m_mouseColor);
 
 	g_theRenderer->BindShader("Data/Shaders/default_unlit_devconsole.shader");
 	g_theRenderer->BindTextureViewWithSampler(0, nullptr);

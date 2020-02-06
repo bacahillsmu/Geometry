@@ -17,6 +17,9 @@
     <Filter Include="General\Shapes">
       <UniqueIdentifier>{cc3ae38e-b50e-4038-9ef9-74bbc2e6fd1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="General\SpatialHashing">
+      <UniqueIdentifier>{a55271cb-63bd-494b-9156-414b9703e098}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\App.hpp">
@@ -46,6 +49,9 @@
     <ClInclude Include="Shapes\ConvexPoly.hpp">
       <Filter>General\Shapes</Filter>
     </ClInclude>
+    <ClInclude Include="SpatialHashing\SpatialHashingDisc.hpp">
+      <Filter>General\SpatialHashing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework\Main_Windows.cpp">
@@ -71,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="Shapes\ConvexPoly.cpp">
       <Filter>General\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialHashing\SpatialHashingDisc.cpp">
+      <Filter>General\SpatialHashing</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

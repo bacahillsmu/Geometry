@@ -80,6 +80,11 @@ public:
 	bool IsKKeyPressed();
 	bool IsEKeyPressed();
 	bool IsSKeyPressed();
+	bool IsBKeyPressed();
+	bool IsVKeyPressed();
+	bool IsCKeyPressed();
+	bool IsXKeyPressed();
+	bool IsQKeyPressed();
 
 	// Character Keys;
 	bool HandleChar(unsigned char asKey_);

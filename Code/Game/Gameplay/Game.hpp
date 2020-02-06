@@ -5,7 +5,6 @@
 #include "Engine/Renderer/Shader.hpp"
 #include "Engine/Math/AABB2.hpp"
 #include "Game/Shapes/ConvexPoly.hpp"
-#include "Engine/Math/Line.hpp"
 
 #include <chrono>
 #include <queue>
@@ -23,6 +22,7 @@ struct IntVec2;
 struct Camera;
 class UIWidget;
 class Map;
+class SpatialHashingDisc;
 
 struct ImageLoading
 {
@@ -73,9 +73,20 @@ public:
 	// Game;
 	void MakeConvexPolys2D();
 	void MakeInvisibleRaycasts();
+	void MakeInvisibleRaycastsWithSpatialHashing();
 	void MakeMainRaycast();
+	void MakeMainRaycastWithSpatialHashing();
 	void CheckForInput();
+	void RefreshPolyEdges();
+	void CreateOrRefreshSpatialHashingDiscs();
 
+	// Adding Debug Verts;
+	void DrawMainRaycast();
+	void CheckAndDrawAnyDebugVerts();
+	void AddVertsOfInvisibleRaycasts(std::vector<Vertex_PCU>* verts);
+	void AddVertsOfInvisibleRaycastHits(std::vector<Vertex_PCU>* verts);
+	void AddVertsOfSpatialHashingDiscs(std::vector<Vertex_PCU>* verts);
+	void DrawDebugInformation();
 
 public:
 	
@@ -103,6 +114,7 @@ public:
 
 	// Mouse;
 	Vec2 m_worldMousePosition = Vec2(0.0f, 0.0f);
+	Rgba m_mouseColor = Rgba::BLUE;
 
 	// Map;
 	Map* m_map = nullptr;
@@ -110,22 +122,41 @@ public:
 	// Shapes;
 	int m_numberOfConvexPolys = 8;
 	int m_minNumberOfConvexPolys = 1;
-	int m_maxNumberOfConvexPolys = 512;
+	int m_maxNumberOfConvexPolys = 8192;
 	std::vector<ConvexPoly2D> m_convexPoly2Ds;
+	std::vector<ConvexPoly2D*> m_convexPoly2DsToCheck;
 
 	// Rays;
-	int m_numberOfInvisibleRaycasts = 10;
+	int m_numberOfInvisibleRaycasts = 8;
 	int m_minNumberOfInvisibleRaycasts = 1;
-	int m_maxNumberOfInvisibleRaycasts = 8112;
-	bool m_refreshInvisbleRaycasts = true;
+	int m_maxNumberOfInvisibleRaycasts = 8192;
 	std::vector<Line> m_invisibleRays;
 	std::vector<Vec2> m_invisibleRaysIntersections;
-	std::vector<Vec2> m_mainRaysIntersections;
 	std::vector<Line> m_polyEdges;
+	bool m_mainRayHit = false;
+	Vec2 m_mainRayHitPoint;
+	Vec2 m_mainRayHitSurfaceNormal;
 	Vec2 m_mainRayStart;
 	Vec2 m_mainRayEnd;
-	Line m_mainRayLine;
 
+	// Information;
+	int m_frameCounter = 0;
+	double m_timeAtStartOfFrame = 0.0;
+	double m_timeAtEndOfFrame = 0.0;
+	double m_frameTime = 0.0;
+	double m_totalFrameTime = 0.0;
+	double m_averageFrameTime = 0.0;
+	double m_raycastTimerStart = 0.0;
+	double m_raycastTime = 0.0;
+	bool m_spatialHashing = true;
+	SpatialHashingDisc* m_spatialHashingDisc = nullptr;
+
+	// Adding Debug Verts;
+	bool m_shouldDrawInvisibleRaycasts = false;
+	bool m_shouldDrawInvisibleRaycastHits = false;
+	bool m_shouldShowSurfaceNormals = false;
+	bool m_shouldDrawSpatialHashingDiscs = true;
+	bool m_shouldRenderCheckPolys = true;
 
 };
 
